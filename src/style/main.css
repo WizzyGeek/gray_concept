@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    min-width: 100vw;
+    min-height: 100vh;
+}
+
+/* Backdrop is broken on resize, browser issue*/
+div.bg {
+    height: 100%;
+    width: 100%;
+    background: url("../scene.jpg");
+    background-position: 45% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: grayscale(100%) brightness(50%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+section.main {
+    display: grid;
+    grid-template-columns: [con] 0.5fr [art] 0.5fr;
+    height: 100vh;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+    grid-template-areas:
+        "title art"
+}
+
+div {
+    width: fit-content;
+}
+
+div.title {
+    position: relative;
+    top: -9.5rem;
+    left: 0;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 8rem;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+}
+
+div.title div {
+    font-size: 1.5rem;
+    font-style: italic;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+div.art {
+    position: relative;
+    height: 0px;
+    width: 0px;
+    left: 2rem;
+}
+
+/* div.art div:nth-child(2) {
+    position: relative;
+    left: -10vw;
+    top: -10vh;
+} */
+
+div.art div:nth-child(3) {
+    position: absolute;
+    left: calc(-15rem - 8rem);
+    top: -15rem;
+    width: 8rem;
+    height: 30rem;
+    background-color: rgba(240, 248, 255, 0.665);
+}
+
+
+div.art div:nth-child(1) {
+    clip-path: polygon(0 0, 50% 0, 100% 50%, 100% 100%, 0 100%, 50% 50%);
+    background: url("../skyline.jpeg");
+    background-size: cover;
+    background-position: -160%;
+    filter: contrast(100%);
+    height: 30rem;
+    width: 30rem;
+    position: absolute;
+    left: -15rem;
+    top: -15rem;
+}
+div.art div:nth-child(2) {
+    clip-path: circle(50% at 50% 50%);
+    background-color: rgba(252, 252, 252, 0);
+    position: absolute;
+    backdrop-filter: brightness(225%) contrast(130%) sepia(100%) blur(8px);
+    left: 0rem;
+    height: calc(2*10.606rem);
+    width: calc(2 * 10.606rem);
+    top: calc(-10.606rem);
+    left: calc(-10.606rem - 15rem);
+}
+
+div.art div:nth-child(4) {
+    clip-path: polygon(100% 0, 0 100%, 100% 100%);
+    backdrop-filter: blur(20px);
+    height: 15rem;
+    width: 15rem;
+}
+
+footer {
+    position: fixed;
+    font-size: 0.8rem;
+    font-family:Arial, Helvetica, sans-serif;
+    font-style: italic;
+    align-self: center;
+    bottom: 0.5rem;
+    color: rgba(255, 255, 255, 0.365);
+}
